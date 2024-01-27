@@ -17,7 +17,7 @@ function MPGNN(x₀, edge_index, γ=0.1, iters=1)
     #     xᵗ⁺¹ = ConvLayer(X[end], edge_index, γ)
     #     push!(X, xᵗ⁺¹)
     # end
-    for _ ∈ 1:iters-2
+    for _ ∈ 1:iters-1
         xᵗ⁺¹ = ConvLayer(X[end], edge_index, γ)
         push!(X, xᵗ⁺¹)
     end

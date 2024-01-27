@@ -41,6 +41,6 @@ function Message(xⱼ)
 end
 
 
-relu(x::Real) = (x <= 0) * 0 + (x > 0) * x
-sgn(x::Real) = (x <= 0) * -1 + (x > 0) * 1
-sigmoid(x::Real) = BigFloat(one(x) / (one(x) + exp(-x)))
+# relu(x::Real) = (x <= 0) * 0 + (x > 0) * x
+# sgn(x::Real) = (x <= 0) * -1 + (x > 0) * 1
+# sigmoid(x::Real) = BigFloat(one(x) / (one(x) + exp(-x)))

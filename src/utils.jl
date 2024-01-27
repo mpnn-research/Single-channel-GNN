@@ -20,6 +20,12 @@ end
 
 
 function construct_graph(graph)
+    """
+    Docs
+    Input:
+
+    Output:
+    """
     x₀ = BigFloat.(ones(Int, nv(graph)))
     edge_index = zeros(Int, 2, ne(graph))
     for (i, edge) in zip(1:ne(graph), edges(graph))
@@ -29,24 +35,30 @@ function construct_graph(graph)
     return x₀, edge_index
 end
 
-function graphPloting(A, P, c=nothing, title="")
-    flag = true
-    plt = nothing
-    for i ∈ 1:size(A)[1]
-        for j ∈ 1:size(A)[2]
-            if A[i,j] == 1
-                if flag
-                    plt = plot([P[i,1], P[j,1]], [P[i,2], P[j,2]], color="black", linewidth=1, label="", showaxis=false, formatter=Returns(""), title=title, dpi=150)
-                    flag = false
-                else plot!([P[i,1], P[j,1]], [P[i,2], P[j,2]], color="black", linewidth=1, label="")
-                end
-            end
-        end
+
+function WL_vs_GNN(graph, γ, verbose=false)
+    """
+    Docs
+    Input:
+
+    Output:
+    """
+    x₀, edge_index = construct_graph(graph)
+    iters, coloring_wl = WeisfeilerLehman(x₀, edge_index)
+    coloring_gnn = MPGNN(x₀, edge_index, γ, iters)
+    if coloring_wl != coloring_gnn && verbose
+        println("Iters: $(iters), P: $(P[i]), N: $(N[j])")
+        println(coloring_wl)
+        println(coloring_gnn)
+        println(maximum(coloring_wl))
+        println(maximum(coloring_gnn))
+        println(minimum(degree(graphs[i][j])))
+        println(degree(graphs[i][j]))
     end
-    for i ∈ 1:size(P)[1] # ERROR NO PLOTEA CUANDO A = 0
-        if isnothing(c) scatter!([P[i,1]], [P[i,2]], markersize=10, label=i)
-        else scatter!([P[i,1]], [P[i,2]], markersize=10, label=i, c=c[i])
-        end
-    end
-    return plt
+    return coloring_wl == coloring_gnn
+end
+
+function Regression(a, b)
+    A = hcat(ones(length(a)), a)
+    return inv(A' * A) * A' * b
 end

@@ -19,7 +19,7 @@ function WeisfeilerLehman(C⁰, edge_index, P=nothing, plot=false)
         Cᵗ⁺¹ = WLKernel(C[end], edge_index)
         push!(C, Cᵗ⁺¹)
     end
-    return length(C[1:end-1]), C[end]
+    return length(C[1:end-1])-1, C[end]
 end
 
 
