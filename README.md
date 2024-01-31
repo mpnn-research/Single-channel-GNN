@@ -8,9 +8,8 @@ Official Julia implementation of the paper: "A single channel is all we need".
 ```bash
 git clone https://github.com/mpnn-researcher/Single-channel-GNN.git
 ```
-
-To run all the experiments you only need to install julia on your computer and then run
-
+2. Install Julia ![here](https://julialang.org/downloads/)
+3. Integrate Julia in Jupyter by running:
 ```Julia bash
 using Pkg
 Pkg.add("IJulia")
