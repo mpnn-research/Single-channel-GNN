@@ -4,7 +4,7 @@ using Colors
 include("message_passing.jl")
 
 
-function WeisfeilerLehman(C⁰, edge_index, P=nothing, plot=false)
+function WeisfeilerLehman(C⁰, edge_index)
     C¹ = WLKernel(C⁰, edge_index)
     C = [C⁰, C¹]
     while C[end] != C[end-1]
