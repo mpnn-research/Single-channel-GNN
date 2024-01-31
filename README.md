@@ -18,7 +18,7 @@ Pkg.add("IJulia")
 
 After that, open `main.ipynb` and select the Julia kernel
 
-
+<!---
 ## Citation
 If you find this useful for your research, please use the following.
 
@@ -32,8 +32,8 @@ If you find this useful for your research, please use the following.
 }
 ```
 
-
 ## Acknowledgments
  - Acknowledgments
+--->
 
 ![](wl.gif)
