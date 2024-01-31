@@ -25,24 +25,12 @@ function MPGNN(x₀, edge_index, γ=0.1, iters=1)
 end
 
 function ConvLayer(xᵗ, edge_index, γ)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     ℳ = MessagePassing(xᵗ, edge_index)
     xᵗ⁺¹ = Update(xᵗ, ℳ, γ)
     return xᵗ⁺¹
 end
 
 function Update(xᵗ, ℳ, γ)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     # n = length(xᵗ)
     # γ = rand(1e-4 : .1e-20 : 1e-3)
     return sigmoid.(γ .* xᵗ + γ .* ℳ)

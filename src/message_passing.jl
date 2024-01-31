@@ -1,11 +1,5 @@
 
 function MessagePassing(xᵗ, edge_index, multiset=false)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     if multiset ℳ = [[] for _ in 1:length(xᵗ)]
     else ℳ = [[0.] for _ in 1:length(xᵗ)] end
     for edge in eachcol(edge_index)
@@ -20,23 +14,11 @@ end
 
 
 function Aggregation(ℳᵢ)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     return reduce(+, ℳᵢ)
 end
 
 
 function Message(xⱼ)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     return xⱼ
 end
 
