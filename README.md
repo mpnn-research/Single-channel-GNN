@@ -1,5 +1,5 @@
-# A single channel is all we need (ICML 2024)
-Official Julia implementation of the paper: "A single channel is all we need".
+# On dimensionality of feature vectors in MPNNs (ICML 2024)
+Official Julia implementation of the paper: "On dimensionality of feature vectors in MPNNs".
 
 ## Getting Started
 
