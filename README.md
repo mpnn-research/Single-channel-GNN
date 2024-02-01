@@ -4,9 +4,9 @@ Official Julia implementation of the paper: "A single channel is all we need".
 ## Getting Started
 
 ### Setup 
-1.  Clone the repo:
+1.  Download the repo:
 ```bash
-git clone https://github.com/mpnn-researcher/Single-channel-GNN.git
+---
 ```
 2. Install Julia
 - For Windows
