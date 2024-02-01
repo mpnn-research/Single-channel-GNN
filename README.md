@@ -28,7 +28,7 @@ using Pkg
 Pkg.add("IJulia")
 ```
 
-After that, open `main.ipynb` and select the Julia kernel
+After that, open `main.ipynb`, select the Julia kernel and run the experiments.
 
 <!---
 ## Citation
