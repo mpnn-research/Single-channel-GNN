@@ -5,12 +5,6 @@ include("message_passing.jl")
 
 
 function MPGNN(x₀, edge_index, γ=0.1, iters=1)
-    """
-    Docs
-    Input:
-
-    Output:
-    """
     x₁ = ConvLayer(x₀, edge_index, γ)
     X = [x₀, x₁]
     # while length(unique(X[end-1])) < length(unique(X[end]))
