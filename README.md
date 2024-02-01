@@ -1,4 +1,4 @@
-# On dimensionality of feature vectors in MPNNs (ICML 2024)
+# On dimensionality of feature vectors in MPNNs
 Official Julia implementation of the paper: "On dimensionality of feature vectors in MPNNs".
 
 ## Getting Started
