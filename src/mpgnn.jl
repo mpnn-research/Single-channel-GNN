@@ -15,6 +15,7 @@ function MPGNN(x₀, edge_index, γ=0.1, iters=1)
         xᵗ⁺¹ = ConvLayer(X[end], edge_index, γ)
         push!(X, xᵗ⁺¹)
     end
+    # display(X)
     return Coloring(X[end])
 end
 
@@ -27,6 +28,9 @@ end
 function Update(xᵗ, ℳ, γ)
     # n = length(xᵗ)
     # γ = rand(1e-4 : .1e-20 : 1e-3)
-    return sigmoid.(γ .* xᵗ + γ .* ℳ)
+    # display(xᵗ)
+    # display(ℳ)
+    # println("----")
+    return sigmoid.(0.5*γ .* xᵗ + γ .* ℳ)
 end
 

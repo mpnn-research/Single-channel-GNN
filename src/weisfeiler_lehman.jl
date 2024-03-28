@@ -11,6 +11,7 @@ function WeisfeilerLehman(C⁰, edge_index)
         Cᵗ⁺¹ = WLKernel(C[end], edge_index)
         push!(C, Cᵗ⁺¹)
     end
+    # display(C)
     return length(C[1:end-1])-1, C[end]
 end
 

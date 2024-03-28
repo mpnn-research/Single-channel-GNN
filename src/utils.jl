@@ -1,3 +1,5 @@
+using Primes
+
 function Coloring(𝒞)
     n = size(𝒞)[1]
     Cᵗ⁺¹ = BigFloat.(zeros(n))
@@ -31,7 +33,23 @@ function WL_vs_GNN(graph, γ)
     return sum(coloring_wl) <= sum(coloring_gnn)
 end
 
+
 function Regression(a, b)
     A = hcat(ones(length(a)), a)
     return inv(A' * A) * A' * b
+end
+
+
+function label_encoder(X)
+    n, d = size(X)
+    H = ones(n)
+    𝒬 = unique(X, dims=1)
+    for q ∈ 1:size(𝒬)[1]
+        for i ∈ 1:n
+            if 𝒬[q, :] == X[i, :]
+                H[i] = sqrt(prime(q))
+            end
+        end
+    end
+    return H
 end
